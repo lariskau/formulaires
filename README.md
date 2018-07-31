@@ -1,27 +1,28 @@
-<h1>Formulaire Mardi</h1>
-<h4>Réalisation by Edouard, Léa</h4>
+# README
 
-Heroku (lien du site)
-    >  <a href="https://formthp.herokuapp.com/">Formulaire en ligne</a>
+Réalisé avec mon binome Edouard Plantevin !
 
-Github
+Pour voir cette app BG en ligne : https://formulaires-thp-lea.herokuapp.com/
 
-Etape 1:   
 
-    > git clone https://github.com/SatanPetitCoeur/Formulaire.git
+<h5>Github</h5>
 
-Etape 2: 
+Etape 1:  
 
-    > cd Formulaire
-    
+   > git clone https://github.com/SatanPetitCoeur/Je-me-presente.git
+
+Etape 2:
+
+   > cd Formulaire
+   
 Etape 3:
 
-    > rake db:migrate 
-     
+   > rake db:migrate
+   
 Etape 4:
 
-    > rails serveur
-   
+   > rails serveur
+ 
 Etape 5:  
 
-    > aller sur :  http://localhost:3000/
+   > aller sur :  http://localhost:3000/
