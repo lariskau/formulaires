@@ -1,0 +1,60 @@
+<h1>Créer vôtre profil</h1>
+
+
+<!-- Formulaire en HTML
+<form action="/new" method="post">
+  <input type="text" name="username" placeholder="Votre nom"/>
+  <input type="text" name="email" placeholder="Email"/>
+  <input type="text" name="bio" placeholder="Bio"/>
+</form>
+
+-->
+
+
+<!--  Formulaire avec form_for
+<% if 1 == 2 %>
+<%= form_for @user do |f| %>
+  Username : <%= f.text_field :username %><br />
+  Email : <%= f.text_field :email %><br />
+  Bio : <%= f.text_area :bio %><br />
+  <%= f.submit %>
+<% end %>
+<% end %>
+-->
+
+
+
+
+<!-- Formulaire en form_tag -->
+<%= form_tag "/new", method: "post" do %>
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>
+    <span class="obligatoire">*</span>
+    <input type="text" name="username" placeholder="Votre nom">
+  </p>
+  <p>
+    <span class="obligatoire">*</span>
+    <input type="text" name="email" placeholder="Email">
+  </p>
+  <p>
+    <span class="non_obligatoire">*</span>
+    <input type="text" name="bio" placeholder="Bio">
+  </p>
+  <p><span class="obligatoire">*</span> <small>champs obligatoire</small></p>
+  <p>
+    <span class="non_obligatoire">*</span>
+    <input type="submit" value="Créer votre profil" class="bouton_submit">
+  </p>
+<% end %>
+
+<% if @users.length == 0 %>
+  <p>Sois le premier à t'inscrire !!!</p>
+<% elsif @users.length == 1 %>
+  <p>Déjà <%= @users.length %> personne c'est déjà inscrite</p>
+<% else %>
+  <p>Déjà <%= @users.length %> personnes se sont déjà inscrites</p>
+<% end %>
+
+<% @users.each do |user| %>
+    <p><a href="/new/<%= user.id %>">Visiter le profil de <%= user.username %></a><p>
+ <% end %>
